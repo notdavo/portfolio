@@ -1,0 +1,10 @@
+.icon {
+    color: #f7fff7;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: #ff6b6b;
+    margin-right: 10px;
+}

@@ -1,0 +1,24 @@
+/* Section.css */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.section:not(:first-child){
+  border-top: 1px solid #ccc;
+}
+
+.section h2{
+  color: #ffe66d;
+  font-size: 80px;
+  margin: 0;
+}
+
+  
+  
