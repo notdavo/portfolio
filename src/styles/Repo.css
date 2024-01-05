@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'BigNoodleTitling';
+    src:  url('../assets/fonts/big_noodle_titling.ttf') format('truetype');
+}
+
+.repo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #4ecdc4;
+    border-radius: 10px;
+    background-color: #292F36;
+    width: 40%;
+}
+
+.repo-card p {
+    font-family: 'BigNoodleTitling', sans-serif;
+    margin: 10px;
+    width: 100%; /* Set the minimum width to the width of its content */
+}
+
+.repo-name {
+    color: #4ecdc4;
+}
+
+.repo-description {
+    color: #f7fff7;
+    font-size: 25px;
+
+}
+.language-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.repo-language {
+    color: #4ecdc4;
+    font-size: 25px;
+}
+
+.icon-language {
+    background-color: #FFD600;
+    border-radius: 5px;
+}
+
+.repo-buttom{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #4ecdc4;
+    border-radius: 20px;
+    background-color: #1d2225;
+    color: #f7fff7;
+    width: auto;
+    margin: 10px;
+}
+
+.repo-buttom:hover{
+    background-color: #292F36;
+}
+
+.buttoms-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.p-buttom{
+    font-size: large;
+}
+
+.icon-button {
+    padding-top: 9px;
+    color: #f7fff7;
+}

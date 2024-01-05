@@ -8,11 +8,10 @@ const Navbar = ({ sections }) => {
   return (
     <nav className="navbar">
       <img className="profile_image" src={image} alt="David's profile" />
-      <ul>
-        {sections.map((section, index) => (
-          <li key={index}>{section.title}</li>
-        ))}
-      </ul>
+        {sections.map((section) => (
+          <a href={"#"+section.title.toLowerCase()}>{section.title}</a>
+        ))
+        }
     </nav>
   );
 };
