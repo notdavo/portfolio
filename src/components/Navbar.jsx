@@ -9,7 +9,7 @@ const Navbar = ({ sections }) => {
     <nav className="navbar">
       <img className="profile_image" src={image} alt="David's profile" />
         {sections.map((section) => (
-          <a href={"#"+section.title.toLowerCase()}>{section.title}</a>
+          <a key={section.id} href={"#"+section.title.toLowerCase()}>{section.title}</a>
         ))
         }
     </nav>

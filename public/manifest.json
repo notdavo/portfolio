@@ -1,0 +1,13 @@
+{
+    "short_name": "My Portfolio",
+    "name": "My Portfolio",
+    "description": "This is a portfolio to showcase my project and about me.",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "icons": [
+      
+    ]
+  }
+  
