@@ -3,23 +3,30 @@
 @font-face {
     font-family: 'BigNoodleTitling';
     src: url('../assets/fonts/big_noodle_titling.ttf') format('truetype');
-    /* Add more formats if necessary */
 }
+
+a {
+    text-decoration: none;
+    color: #f7fff7;
+}
+  
 
 .navbar {
     background-color: #292F36;
     color: #f7fff7;
     padding: 10px;
-    position: fixed;
     left: 0;
     top: 0;
-    height: 100%;
+    min-height: 100vh;   
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'BigNoodleTitling', sans-serif;
     font-size: 30px;
+    gap: 2%;
+    height: 100%;
 }
 
 .navbar ul {
@@ -27,22 +34,22 @@
     padding: 0;
 }
 
-.navbar li {
+.navbar a {
     margin-bottom: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.navbar li:hover {
+.navbar a:hover {
     background-color: #555;
 }
 
-.navbar li.active {
+.navbar a.active {
     background-color: #555;
 }
 
 .profile_image {
     width: 200px;
-    border-radius: 50%; /* Make it circular */
+    border-radius: 50%;
 }
   

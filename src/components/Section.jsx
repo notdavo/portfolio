@@ -2,13 +2,11 @@
 import React from 'react';
 import '../styles/Section.css';
 
-const Section = ({ title, children }) => {
+const Section = ({ title, id, children }) => {
   return (
-    <div className="section">
-      <div className="section-content">
-        <h2 className='style-h2'>{title}</h2>
+    <div id={id} className="section"> 
+        <h2 className='style-title'>{title}</h2>
         {children}
-      </div>
     </div>
   );
 };
