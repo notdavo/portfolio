@@ -1,16 +1,23 @@
 // MainPage.js
-import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin  } from "react-icons/fa";
+import React, { useState, useEffect} from 'react';
 import Section from '../components/Section';
 import Navbar from '../components/Navbar';
 import Repo from '../components/Repo';
+import Switch from '../components/Switch';
 import '../styles/MainPage.css';
+import light_mode_image from '../assets/images/profile_image_light_mode.jpg';
+import dark_mode_image from '../assets/images/profile_image_dark_mode.jpg';
+import { IoLogoJavascript, IoLogoGithub, IoLogoLinkedin , IoLogoReact, IoLogoCss3, IoLogoHtml5, IoMoon, IoSunny } from "react-icons/io5";
+
+
 
 const MainPage = () => {
 
   const maxPages = 3;
   
   const [repos, setRepos] = useState([]);
+  const [color_mode, setColorMode] = useState(false);
+  const [color_mode_icon, setColorModeIcon] = useState(false);
 
   useEffect(() => {
     getRepos();
@@ -21,6 +28,11 @@ const MainPage = () => {
     const githuib = 'https://github.com/notdavo'
     event.target.id === 'linkedin' ? window.open(linkeding, '_blank') : window.open(githuib, '_blank');
   };
+
+  const toggleMode = () => {
+    setColorMode((prevModo) => !prevModo);
+    setColorModeIcon((prevModo) => !prevModo);
+   };
 
   const getRepos = async () => {
     let fetchedRepos  = [];
@@ -45,12 +57,16 @@ const MainPage = () => {
   const sections = [{ id: 0, title: 'David Arce' },
                     { id: 1, title: 'About Me' },
                     { id: 2, title: 'Portfolio' },
-                    { id: 3, title: 'Skills' },
-                    { id: 4, title: 'Contact' }]
+                    { id: 3, title: 'Contact' },]
 
   return (
     <div className='flex-container'>
       <Navbar key="navbar" sections={sections}/>
+      <Switch/>
+      {/* <div className='color-mode'>
+        <IoMoon className='icon-color-mode' onClick={toggleMode}/>
+        <IoSunny className='icon-color-mode' onClick={toggleMode}/>
+      </div> */}
       <div className="sections">
         {sections.map((section) => (
           <Section key={section.id} id={section.title.toLowerCase()} title={section.title}>
@@ -60,14 +76,29 @@ const MainPage = () => {
                     <p className='style-2'>If you want to contact me, write to <span>arcerodriguezdavidjosue@gmail.com</span>.</p>
                     {/* <button className='download-button'>Donwload my CV</button> */}
                     <div className='social-container'>
-                      <FaLinkedin onClick={openURL} className='icon'></FaLinkedin>
-                      <FaGithub onClick={openURL} className='icon'></FaGithub>
+                      <IoLogoLinkedin id='linkedin' onClick={openURL} className='icon'/>
+                      <IoLogoGithub id='github' onClick={openURL} className='icon'/>
                     </div>
                 </div>
             )}
             {section.id === 1 && (
-                <div>
-                    <p className='style-1'>I'm a software developer eager to keep learning and put in practice all my knowledge in web developing.</p>
+                <div className='about_me_container'>
+                  <img className="profile_image" src={dark_mode_image} alt="David's profile" />
+                  <div className='about_me'>
+                    <p className='style-about-me'>
+                      Passionate Software Developer eager to keep learning and grow in the professional scene. Seeking to use my knowledge and committed to becoming a dependable and valuable team member.
+                      <br/>I have worked with programming languages and frameworks such as:
+                    </p>
+                    <div className='skills'>
+                      <div className='icons-container'>
+                        <span className='javascript-main'><IoLogoJavascript className='icon-javascript-main'/>JavaScript</span>
+                        <span className='javascript-main'><IoLogoReact className='icon-react-main'/>React</span>
+                        <span className='html-main'><IoLogoHtml5 className='icon-html-main'/>HTML</span>
+                        <span className='css-main'><IoLogoCss3 className='icon-css-main'/>CSS</span>
+                        <span className='git-main'><IoLogoGithub className='icon-git-main'/>Git</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             )}
             {section.id === 2 && (
@@ -75,14 +106,11 @@ const MainPage = () => {
                 {repos.map((repo) =>(
                   <Repo key={repo.id} name={repo.name} language={repo.language} description={repo.description} repo_url={repo.html_url}/>
                 ))}
+                <Repo key={"repo.id"} name={"repo.name"} language={"repo.language"} description={"repo.description"} repo_url={"repo.html_url"}/>
+
               </div>
             )}
             {section.id === 3 && (
-                <div>
-                    <p>This is the content for Skills.</p>
-                </div>
-            )}
-            {section.id === 4 && (
                 <div>
                     <p>This is the content for Contact.</p>
                 </div>

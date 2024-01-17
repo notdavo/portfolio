@@ -7,6 +7,7 @@ const Section = ({ title, id, children }) => {
     <div id={id} className="section"> 
         <h2 className='style-title'>{title}</h2>
         {children}
+        <div className='line'/>
     </div>
   );
 };

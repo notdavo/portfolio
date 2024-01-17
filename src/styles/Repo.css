@@ -11,7 +11,7 @@
     text-align: center;
     border: 2px solid #4ecdc4;
     border-radius: 10px;
-    background-color: #292F36;
+    background-color: #1d2225;
     padding: 10px;
 }
 
@@ -88,4 +88,28 @@
 .icon-button {
     color: #f7fff7;
     font-size: 20px;
+}
+
+/* Responsive styles using media queries */
+
+@media only screen and (max-width: 768px) {
+    .repo-description {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .repo-language,
+    .icon-language,
+    .icon-react,
+    .icon-html,
+    .icon-css {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .span-buttom {
+        font-size: medium; /* Adjust font size for smaller screens */
+    }
+
+    .icon-button {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
 }

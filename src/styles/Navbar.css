@@ -5,15 +5,10 @@
     src: url('../assets/fonts/big_noodle_titling.ttf') format('truetype');
 }
 
-a {
-    text-decoration: none;
-    color: #f7fff7;
-}
-  
-
 .navbar {
-    background-color: #292F36;
+    background-color: #1d2225;
     color: #f7fff7;
+    width: 150px;
     padding: 10px;
     left: 0;
     top: 0;
@@ -27,6 +22,7 @@ a {
     font-size: 30px;
     gap: 2%;
     height: 100%;
+    /* box-shadow: 1px 10px 10px #f7fff7; */
 }
 
 .navbar ul {
@@ -35,21 +31,42 @@ a {
 }
 
 .navbar a {
-    margin-bottom: 10px;
+    text-decoration: none;
+    color: #f7fff7;
+    width: 100%;
+    text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .navbar a:hover {
+    border-radius: 10px;
     background-color: #555;
 }
 
 .navbar a.active {
-    background-color: #555;
+    background-color: #4ecdc4;
+    border-radius: 10px;
+    color:#f7fff7;
 }
+/* Responsive styles using media queries */
 
-.profile_image {
-    width: 200px;
-    border-radius: 50%;
+@media only screen and (max-width: 768px) {
+    .navbar {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .navbar a {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        padding: 0 2px 0 2px;
+    }
+
+    .navbar a.active {
+        background-color: #4ecdc4;
+        border-radius: 5px;
+        color:#f7fff7;
+    }
+
+    .profile_image {
+        width: 0; /* Adjust image size for smaller screens */
+    }
 }
-  
