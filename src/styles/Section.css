@@ -5,6 +5,24 @@
   margin: 10px 0 0 0;
 }
 
+/* -------------- DARK MODE -------------*/
+.dark-style-title{
+  background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;}
+/* --------------------------------------- */
+
+/* -------------- LIGHT MODE -------------*/
+.light-style-title{
+  background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* --------------------------------------- */
+
+
 .section {
   display: flex;
   flex-direction: column;
@@ -15,12 +33,9 @@
   position: relative;
 }
 
-/* .section:not(:first-child){
-  border-top: 1px solid #ccc;
-} */
+
 
 .section h2{
-  color: #ffe66d;
   font-size: 80px;
   margin: 0;
 }

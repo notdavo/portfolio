@@ -6,12 +6,9 @@
 }
 
 .navbar {
-    background-color: #1d2225;
-    color: #f7fff7;
     width: 150px;
     padding: 10px;
     left: 0;
-    top: 0;
     min-height: 100vh;   
     position: fixed;
     display: flex;
@@ -22,8 +19,47 @@
     font-size: 30px;
     gap: 2%;
     height: 100%;
-    /* box-shadow: 1px 10px 10px #f7fff7; */
 }
+
+/* -------------- DARK MODE -------------*/
+.navbar-dark-mode{
+    background-color: #060A06;
+    color: #f7fff7;
+}
+
+.navbar-dark-mode a{
+    color: #f7fff7;
+}
+
+.navbar-dark-mode a.active{
+    background-color: #4ecdc4;
+}
+
+.navbar-dark-mode a:hover{
+    background-color: #555;
+}
+
+/* --------------------------------------- */
+
+/* -------------- LIGHT MODE -------------*/
+.navbar-light-mode{
+    background-color: #d0e1d0;
+    color: #0E160E;
+}
+
+.navbar-light-mode a{
+    color: #0E160E;
+}
+.navbar-light-mode a.active{
+    background-color: #71A76C;
+    color: #F5F9F5;
+}
+.navbar-light-mode a:hover{
+    background-color: #F5F9F5;
+    color: #0E160E;
+}
+/* --------------------------------------- */
+
 
 .navbar ul {
     list-style: none;
@@ -32,7 +68,6 @@
 
 .navbar a {
     text-decoration: none;
-    color: #f7fff7;
     width: 100%;
     text-align: center;
     cursor: pointer;
@@ -40,13 +75,10 @@
 
 .navbar a:hover {
     border-radius: 10px;
-    background-color: #555;
 }
 
 .navbar a.active {
-    background-color: #4ecdc4;
     border-radius: 10px;
-    color:#f7fff7;
 }
 /* Responsive styles using media queries */
 

@@ -3,11 +3,10 @@ import React, { useState, useEffect} from 'react';
 import Section from '../components/Section';
 import Navbar from '../components/Navbar';
 import Repo from '../components/Repo';
-import Switch from '../components/Switch';
 import '../styles/MainPage.css';
 import light_mode_image from '../assets/images/profile_image_light_mode.jpg';
 import dark_mode_image from '../assets/images/profile_image_dark_mode.jpg';
-import { IoLogoJavascript, IoLogoGithub, IoLogoLinkedin , IoLogoReact, IoLogoCss3, IoLogoHtml5, IoMoon, IoSunny } from "react-icons/io5";
+import { IoLogoJavascript, IoLogoGithub, IoLogoLinkedin , IoLogoReact, IoLogoCss3, IoLogoHtml5 } from "react-icons/io5";
 
 
 
@@ -17,7 +16,10 @@ const MainPage = () => {
   
   const [repos, setRepos] = useState([]);
   const [color_mode, setColorMode] = useState(false);
-  const [color_mode_icon, setColorModeIcon] = useState(false);
+
+  const toggleMode = () => {
+      setColorMode((prevModo) => !prevModo);
+  };
 
   useEffect(() => {
     getRepos();
@@ -28,11 +30,6 @@ const MainPage = () => {
     const githuib = 'https://github.com/notdavo'
     event.target.id === 'linkedin' ? window.open(linkeding, '_blank') : window.open(githuib, '_blank');
   };
-
-  const toggleMode = () => {
-    setColorMode((prevModo) => !prevModo);
-    setColorModeIcon((prevModo) => !prevModo);
-   };
 
   const getRepos = async () => {
     let fetchedRepos  = [];
@@ -60,32 +57,27 @@ const MainPage = () => {
                     { id: 3, title: 'Contact' },]
 
   return (
-    <div className='flex-container'>
-      <Navbar key="navbar" sections={sections}/>
-      <Switch/>
-      {/* <div className='color-mode'>
-        <IoMoon className='icon-color-mode' onClick={toggleMode}/>
-        <IoSunny className='icon-color-mode' onClick={toggleMode}/>
-      </div> */}
+    <div className={`flex-container ${color_mode ? 'dark-mode-flex-container' : 'light-mode-flex-container'}`}>
+      <Navbar key="navbar" sections={sections} toggleMode={toggleMode} color_mode={color_mode}/>
       <div className="sections">
         {sections.map((section) => (
-          <Section key={section.id} id={section.title.toLowerCase()} title={section.title}>
+          <Section key={section.id} id={section.title.toLowerCase()} title={section.title} color_mode={color_mode}>
             {section.id === 0 && (
                 <div>
-                    <p className='style-1'>Welcome to my portfolio as a web developer.</p>
-                    <p className='style-2'>If you want to contact me, write to <span>arcerodriguezdavidjosue@gmail.com</span>.</p>
+                    <p className={`style-1 ${color_mode ? 'dark-mode-style-1' : 'light-mode-style-1'}`}>Welcome to my portfolio as a web developer.</p>
+                    <p className={`style-2 ${color_mode ? 'dark-mode-style-2' : 'light-mode-style-2'}`}>If you want to contact me, write to <span>arcerodriguezdavidjosue@gmail.com</span>.</p>
                     {/* <button className='download-button'>Donwload my CV</button> */}
                     <div className='social-container'>
-                      <IoLogoLinkedin id='linkedin' onClick={openURL} className='icon'/>
-                      <IoLogoGithub id='github' onClick={openURL} className='icon'/>
+                      <IoLogoLinkedin id='linkedin' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-icon' : 'light-mode-icon'}`}/>
+                      <IoLogoGithub id='github' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-icon' : 'light-mode-icon'}`}/>
                     </div>
                 </div>
             )}
             {section.id === 1 && (
                 <div className='about_me_container'>
-                  <img className="profile_image" src={dark_mode_image} alt="David's profile" />
+                  <img className="profile_image" src={color_mode ? dark_mode_image : light_mode_image} alt="David's profile" />
                   <div className='about_me'>
-                    <p className='style-about-me'>
+                    <p className={`style-about-me ${color_mode ? 'dark-mode' : 'light-mode'}`}>
                       Passionate Software Developer eager to keep learning and grow in the professional scene. Seeking to use my knowledge and committed to becoming a dependable and valuable team member.
                       <br/>I have worked with programming languages and frameworks such as:
                     </p>

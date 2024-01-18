@@ -1,10 +1,11 @@
 // Navbar.js
 import React, {useState} from 'react';
-import '../styles/Navbar.css';  // Adjust the path based on your project structure
-import image from '../assets/images/profile_image.jpg';  // Adjust the path based on your project structure
+import '../styles/Navbar.css';
+import Switch from '../components/Switch';
 
 
-const Navbar = ({ sections }) => {
+
+const Navbar = ({ sections, toggleMode, color_mode }) => {
   const [activeSection, setActiveSection] = useState(0);
 
   const handleSectionClick = (sectionId) => {
@@ -12,7 +13,7 @@ const Navbar = ({ sections }) => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${color_mode ? 'navbar-dark-mode' : 'navbar-light-mode'}`}>
       {/* <img className="profile_image" src={image} alt="David's profile" /> */}
         {sections.map((section) => (
           <a 
@@ -24,7 +25,8 @@ const Navbar = ({ sections }) => {
             {section.title}
           </a>
         ))
-        }
+      }
+      <Switch toggleMode={toggleMode} color_mode={color_mode}/> 
     </nav>
   );
 };
