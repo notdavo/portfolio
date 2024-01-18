@@ -1,11 +1,36 @@
 // Repo.js
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import '../styles/Repo.css';  // Adjust the path based on your project structure
 import { IoLogoJavascript, IoLogoGithub, IoLogoChrome, IoLogoReact, IoLogoCss3, IoLogoHtml5 } from "react-icons/io5";
 
 
 
-const Repo = ({name, language, description, repo_url}) => {
+const Repo = ({name, description, repo_url}) => {
+
+  const [mainLanguage, setLanguage] = useState('');
+
+  useEffect(() => {
+    const getRepoLanguages = async () => {
+      let fetchedRepoLanguage  = [];
+      let res;
+      try {
+        res = await fetch(
+            `https://api.github.com/repos/notdavo/${name}/languages`
+        );
+        let data = await res.json();
+        fetchedRepoLanguage  = fetchedRepoLanguage.concat(data);
+        fetchedRepoLanguage.sort((a, b) => b.forks_count - a.forks_count);
+        fetchedRepoLanguage.sort((a, b) => b.stargazers_count - a.stargazers_count);
+        if (fetchedRepoLanguage[0].hasOwnProperty('JavaScript')) {
+          setLanguage('JavaScript');
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    getRepoLanguages();
+  }, [name]);
 
   const repoURL = () => {
     window.open(repo_url, '_blank');
@@ -17,7 +42,7 @@ const Repo = ({name, language, description, repo_url}) => {
       <p className='repo-description'>{description}</p>
       <div className='language-container'>
         <IoLogoJavascript className='icon-language'/>
-        <p className='repo-language'>{language}</p>
+        <p className='repo-language'>{mainLanguage}</p>
         <IoLogoReact className='icon-react'/>
         <p className='repo-language react'>React</p>
         <IoLogoHtml5 className='icon-html'/>

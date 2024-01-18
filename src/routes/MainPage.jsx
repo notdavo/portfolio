@@ -13,7 +13,6 @@ import { IoLogoJavascript, IoLogoGithub, IoLogoLinkedin , IoLogoReact, IoLogoCss
 const MainPage = () => {
 
   const maxPages = 3;
-  
   const [repos, setRepos] = useState([]);
   const [color_mode, setColorMode] = useState(false);
 
@@ -104,9 +103,9 @@ const MainPage = () => {
             {section.id === 2 && (
               <div className='repo-container'>
                 {repos.map((repo) =>(
-                  <Repo key={repo.id} name={repo.name} language={repo.language} description={repo.description} repo_url={repo.html_url}/>
+                  <Repo key={repo.id} name={repo.name} description={repo.description} repo_url={repo.html_url}/>
                 ))}
-                <Repo key={"repo.id"} name={"repo.name"} language={"repo.language"} description={"repo.description"} repo_url={"repo.html_url"}/>
+                {/* <Repo key={"repo.id"} name={"repo.name"} language={"repo.language"} description={"repo.description"} repo_url={"repo.html_url"}/> */}
               </div>
             )}
             {section.id === 3 && (
