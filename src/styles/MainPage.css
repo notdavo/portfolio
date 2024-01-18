@@ -15,6 +15,8 @@
     src:  url('../assets/fonts/coolvetica-condensed-rg.otf') format('opentype');
 }
 
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
+
 html {
     scroll-behavior: smooth;
 }
@@ -26,21 +28,15 @@ html {
     padding: 0 300px 0 300px;
 }
 
+/* -------------------------------------- */
 /* -------------- DARK MODE -------------*/
+/* -------------------------------------- */
 .dark-mode-flex-container {
     background-color: #0d140d;
     color: #E9F1E9;
 }
 
-.dark-mode-style-1 {
-    color: #E9F1E9;
-}
-
-.dark-mode-style-2 {
-    color: #E9F1E9;
-}
-
-.dark-mode-icon{
+.dark-mode-color-white{
     color: #E9F1E9;
 }
 
@@ -49,13 +45,11 @@ html {
 }
 /* --------------------------------------- */
 
-/* -------------- LIGHT MODE -------------*/
+/* -------------------------------------- */
+/* -------------- LIGHT MODE ------------*/
+/* -------------------------------------- */
 .light-mode-flex-container {
     background-color: #F5F9F5;
-    color: #0E160E;
-}
-
-.light-mode-style-1 {
     color: #0E160E;
 }
 
@@ -68,7 +62,7 @@ html {
     font-weight: bold;
 }
 
-.light-mode-icon{
+.light-mode-color-black{
     color: #0E160E;
 }
 
@@ -85,31 +79,38 @@ html {
     font-size: 30px;
 }
 
-.style-1 {
+.thin-text {
     font-family: 'BigNoodleTitling', sans-serif;
     margin: 10px 0 0 0;
 }
 
-.style-2 {
-    font-family: 'coolvetica-condensed', sans-serif;
+.bold-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     margin: 10px 0 0 0;
 }
 
-.style-2 span{
-    border-bottom: 2px solid #4ecdc4;
+.bold-text span{
+    border-bottom: 2px solid #71A76C;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .style-about-me {
-    display: flex;
-    flex-direction: row;
     font-family: 'coolvetica-condensed', sans-serif;
     justify-content: center;
     margin: 0 0 10px 0;
 }
 
 .about_me_container {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 40px;
 }
@@ -118,10 +119,11 @@ html {
     text-align: justify;
     justify-content: center;
 }
+/* ------------------------------------- */
+/* -------------- SKILLS ---------------*/
+/* ------------------------------------- */
 
 .skills {
-    display: flex;
-    flex-direction: column;
     color: #f7fff7;
     font-family: 'BigNoodleTitling', sans-serif;
     gap: 10px;
@@ -137,65 +139,49 @@ html {
     display: flex;
     gap: 10px;
 }
+/* ------------------------------------- */
+
+/* ------------------------------------- */
+/* -------------- ICONS -----------------*/
+/* ------------------------------------- */
 
 .icons-container span{
     font-size: large;
 }
 
-.javascript-main {
+.icons-main {
     gap: 5px;
     display: flex;
-    background-color: #1d2225;
     padding: 5px;
     align-items: center;
+    border-radius: 5px;
+}
+
+.background-icon-black {
+    background-color: #1d2225;
 }
 
 .html-main {
-    gap: 5px;
-    display: flex;
     background-color: #E34C26;
-    padding: 5px;
-    align-items: center;
 }
 
 .css-main {
-    gap: 5px;
-    display: flex;
     background-color: #264DE4;
-    padding: 5px;
-    align-items: center;
 }
 
-.git-main {
-    gap: 5px;
-    display: flex;
-    background-color: #1d2225;
-    padding: 5px;
-    align-items: center;
+.icon-size-main {
+    font-size: 25px;
 }
 
 .icon-javascript-main {
-    font-size: 25px;
     color: #FFD600;
 }
 
 .icon-react-main {
-    font-size: 25px;
     color: #61DBFB;
 }
 
-.icon-html-main {
-    font-size: 25px;
-    color: #f7fff7;
-}
-
-.icon-css-main {
-    font-size: 25px;
-    color: #f7fff7;
-}
-
-.icon-git-main {
-    font-size: 25px;
+.icon-white {
     color: #f7fff7;
 }
 
@@ -204,6 +190,26 @@ html {
     max-height: 220px;
     border-radius: 50%;
 }
+
+.icon {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    margin-right: 10px;
+    color: #71A76C;
+}
+
+.repo-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px; 
+    margin-top: 10px;
+    gap: 20px;
+}
+/* ------------------------------------- */
+
 
 /* .download-button{
     margin-top: 10px;
@@ -224,35 +230,10 @@ html {
     background-color: #41aaa3;
 } */
 
-.color-mode {
-    display: flex;
-    flex-direction: row;
-}
-
 .social-container{
     margin-top: 10px;
-    display: flex;
-    flex-direction: row;
 }
 
-/* ICONS */
-
-.icon {
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.icon:hover {
-    margin-right: 10px;
-}
-
-.repo-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1000px; /* Optional: Set a maximum width for the container */
-    margin-top: 10px;
-    gap: 20px;
-}
 
 /* Responsive styles using media queries */
 

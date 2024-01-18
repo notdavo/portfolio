@@ -7,7 +7,7 @@ import { IoLogoJavascript, IoLogoGithub, IoLogoChrome, IoLogoReact, IoLogoCss3, 
 
 const Repo = ({name, language, description, repo_url}) => {
 
-  const repoURL = (event) => {
+  const repoURL = () => {
     window.open(repo_url, '_blank');
   }
 

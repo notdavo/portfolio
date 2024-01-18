@@ -17,13 +17,22 @@ const MainPage = () => {
   const [repos, setRepos] = useState([]);
   const [color_mode, setColorMode] = useState(false);
 
-  const toggleMode = () => {
-      setColorMode((prevModo) => !prevModo);
-  };
-
   useEffect(() => {
     getRepos();
+    const storedTemeValue = localStorage.getItem('color_mode');
+    const booleanTemeValue = JSON.parse(storedTemeValue);
+    if (booleanTemeValue) {
+      setColorMode(booleanTemeValue);
+    }
   }, []);
+
+  const toggleMode = () => {
+    setColorMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem('color_mode', newMode);
+      return newMode;
+    });
+  };  
 
   const openURL = (event) => {
     const linkeding = 'https://www.linkedin.com/in/david-arce-rodríguez-40a457122'
@@ -41,7 +50,6 @@ const MainPage = () => {
         );
         let data = await res.json();
         fetchedRepos  = fetchedRepos.concat(data);
-        console.log(fetchedRepos);
     }
     fetchedRepos.sort((a, b) => b.forks_count - a.forks_count);
     fetchedRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
@@ -64,30 +72,30 @@ const MainPage = () => {
           <Section key={section.id} id={section.title.toLowerCase()} title={section.title} color_mode={color_mode}>
             {section.id === 0 && (
                 <div>
-                    <p className={`style-1 ${color_mode ? 'dark-mode-style-1' : 'light-mode-style-1'}`}>Welcome to my portfolio as a web developer.</p>
-                    <p className={`style-2 ${color_mode ? 'dark-mode-style-2' : 'light-mode-style-2'}`}>If you want to contact me, write to <span>arcerodriguezdavidjosue@gmail.com</span>.</p>
+                    <p className={`thin-text ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}>Welcome to my portfolio as a web developer.</p>
+                    <p className={`bold-text ${color_mode ? 'dark-mode-color-white' : 'light-mode-style-2'}`}>If you want to contact me, write to <span>arcerodriguezdavidjosue@gmail.com</span>.</p>
                     {/* <button className='download-button'>Donwload my CV</button> */}
-                    <div className='social-container'>
-                      <IoLogoLinkedin id='linkedin' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-icon' : 'light-mode-icon'}`}/>
-                      <IoLogoGithub id='github' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-icon' : 'light-mode-icon'}`}/>
+                    <div className='flex-row social-container'>
+                      <IoLogoLinkedin id='linkedin' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}/>
+                      <IoLogoGithub id='github' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}/>
                     </div>
                 </div>
             )}
             {section.id === 1 && (
-                <div className='about_me_container'>
+                <div className='flex-row about_me_container'>
                   <img className="profile_image" src={color_mode ? dark_mode_image : light_mode_image} alt="David's profile" />
                   <div className='about_me'>
-                    <p className={`style-about-me ${color_mode ? 'dark-mode' : 'light-mode'}`}>
+                    <p className={`flex-row style-about-me ${color_mode ? 'dark-mode' : 'light-mode'}`}>
                       Passionate Software Developer eager to keep learning and grow in the professional scene. Seeking to use my knowledge and committed to becoming a dependable and valuable team member.
                       <br/>I have worked with programming languages and frameworks such as:
                     </p>
-                    <div className='skills'>
+                    <div className='flex-column skills'>
                       <div className='icons-container'>
-                        <span className='javascript-main'><IoLogoJavascript className='icon-javascript-main'/>JavaScript</span>
-                        <span className='javascript-main'><IoLogoReact className='icon-react-main'/>React</span>
-                        <span className='html-main'><IoLogoHtml5 className='icon-html-main'/>HTML</span>
-                        <span className='css-main'><IoLogoCss3 className='icon-css-main'/>CSS</span>
-                        <span className='git-main'><IoLogoGithub className='icon-git-main'/>Git</span>
+                        <span className='icons-main background-icon-black'><IoLogoJavascript className='icon-size-main icon-javascript-main'/>JavaScript</span>
+                        <span className='icons-main background-icon-black'><IoLogoReact className='icon-size-main icon-react-main'/>React</span>
+                        <span className='icons-main html-main'><IoLogoHtml5 className='icon-size-main icon-white'/>HTML</span>
+                        <span className='icons-main css-main'><IoLogoCss3 className='icon-size-main icon-white'/>CSS</span>
+                        <span className='icons-main background-icon-black'><IoLogoGithub className='icon-size-main icon-white'/>Git</span>
                       </div>
                     </div>
                   </div>
@@ -99,7 +107,6 @@ const MainPage = () => {
                   <Repo key={repo.id} name={repo.name} language={repo.language} description={repo.description} repo_url={repo.html_url}/>
                 ))}
                 <Repo key={"repo.id"} name={"repo.name"} language={"repo.language"} description={"repo.description"} repo_url={"repo.html_url"}/>
-
               </div>
             )}
             {section.id === 3 && (

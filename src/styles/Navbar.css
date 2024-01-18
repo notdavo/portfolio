@@ -20,8 +20,10 @@
     gap: 2%;
     height: 100%;
 }
-
+/* -------------------------------------- */
 /* -------------- DARK MODE -------------*/
+/* -------------------------------------- */
+
 .navbar-dark-mode{
     background-color: #060A06;
     color: #f7fff7;
@@ -32,16 +34,19 @@
 }
 
 .navbar-dark-mode a.active{
-    background-color: #4ecdc4;
+    background-color: #71A76C;
 }
 
 .navbar-dark-mode a:hover{
     background-color: #555;
 }
-
 /* --------------------------------------- */
 
+
+/* --------------------------------------- */
 /* -------------- LIGHT MODE -------------*/
+/* --------------------------------------- */
+
 .navbar-light-mode{
     background-color: #d0e1d0;
     color: #0E160E;
