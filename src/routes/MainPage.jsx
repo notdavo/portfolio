@@ -3,14 +3,16 @@ import React, { useState, useEffect} from 'react';
 import Section from '../components/Section';
 import Navbar from '../components/Navbar';
 import Repo from '../components/Repo';
-import '../styles/MainPage.css';
+import Background from '../components/Background';
 import light_mode_image from '../assets/images/profile_image_light_mode.jpg';
 import dark_mode_image from '../assets/images/profile_image_dark_mode.jpg';
 import { IoLogoJavascript, IoLogoGithub, IoLogoLinkedin , IoLogoReact, IoLogoCss3, IoLogoHtml5 } from "react-icons/io5";
+import '../styles/MainPage.css';
 
 
 
-const MainPage = () => {
+
+const MainPage = ({ config }) => {
 
   const maxPages = 3;
   const [repos, setRepos] = useState([]);
@@ -33,10 +35,11 @@ const MainPage = () => {
     });
   };  
 
-  const openURL = (event) => {
-    const linkeding = 'https://www.linkedin.com/in/david-arce-rodríguez-40a457122'
-    const githuib = 'https://github.com/notdavo'
-    event.target.id === 'linkedin' ? window.open(linkeding, '_blank') : window.open(githuib, '_blank');
+  const openURL = (url) => {
+
+    const linkedin = String(config.linkedin)
+    const github = String(config.github)
+    url === 'linkedin' ? window.open(linkedin, '_blank') : window.open(github, '_blank');
   };
 
   const getRepos = async () => {
@@ -45,7 +48,12 @@ const MainPage = () => {
     try {
       for (let i = 1; i <= maxPages; i++) {
         res = await fetch(
-            `https://api.github.com/users/notdavo/repos?&sort=pushed&per_page=100&page=${i}`
+            `https://api.github.com/users/notdavo/repos?&sort=pushed&per_page=100&page=${i}`, {
+              headers: {
+                'Authorization': `Bearer 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`,
+                'Content-Type': 'application/json', // adjust the content type based on your needs
+              },
+            }
         );
         let data = await res.json();
         fetchedRepos  = fetchedRepos.concat(data);
@@ -63,20 +71,40 @@ const MainPage = () => {
                     { id: 2, title: 'Portfolio' },
                     { id: 3, title: 'Contact' },]
 
+  const LinkedinIcon = () => {
+    const handleClick = () => {
+      console.log('LinkedIn icon clicked!');
+      openURL('linkedin');
+    };
+  
+    return <IoLogoLinkedin id='linkedin' onClick={handleClick} className={`icon ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}/>
+    ;
+  };
+  
+  const GithubIcon = () => {
+    const handleClick = () => {
+      console.log('GitHub icon clicked!');
+      openURL('github');
+    };
+  
+    return <IoLogoGithub id='github' onClick={handleClick} className={`icon ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}/>
+    ;
+  };
+
   return (
     <div className={`flex-container ${color_mode ? 'dark-mode-flex-container' : 'light-mode-flex-container'}`}>
+      <Background/>
       <Navbar key="navbar" sections={sections} toggleMode={toggleMode} color_mode={color_mode}/>
       <div className="sections">
         {sections.map((section) => (
           <Section key={section.id} id={section.title.toLowerCase()} title={section.title} color_mode={color_mode}>
             {section.id === 0 && (
-                <div>
+                <div className='david-container'>
                     <p className={`thin-text ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}>Welcome to my portfolio as a web developer.</p>
                     <p className={`bold-text ${color_mode ? 'dark-mode-color-white' : 'light-mode-style-2'}`}>If you want to contact me, write to <span>arcerodriguezdavidjosue@gmail.com</span>.</p>
-                    {/* <button className='download-button'>Donwload my CV</button> */}
                     <div className='flex-row social-container'>
-                      <IoLogoLinkedin id='linkedin' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}/>
-                      <IoLogoGithub id='github' onClick={openURL} className={`icon ${color_mode ? 'dark-mode-color-white' : 'light-mode-color-black'}`}/>
+                      <LinkedinIcon />
+                      <GithubIcon />
                     </div>
                 </div>
             )}
@@ -103,9 +131,12 @@ const MainPage = () => {
             {section.id === 2 && (
               <div className='repo-container'>
                 {repos.map((repo) =>(
-                  <Repo key={repo.id} name={repo.name} description={repo.description} repo_url={repo.html_url}/>
+                  <Repo key={repo.id} name={repo.name} description={repo.description} repo_url={repo.html_url} color_mode={color_mode}/>
                 ))}
-                {/* <Repo key={"repo.id"} name={"repo.name"} language={"repo.language"} description={"repo.description"} repo_url={"repo.html_url"}/> */}
+                  <Repo key={'repo.id'} name={'repo.name'} description={'repo.description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
+                  <Repo key={'repo.id'} name={'repo.name'} description={'repo.description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
+                  <Repo key={'repo.id'} name={'repo.name'} description={'repo.description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
+
               </div>
             )}
             {section.id === 3 && (

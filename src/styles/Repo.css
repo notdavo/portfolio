@@ -3,115 +3,265 @@
     src:  url('../assets/fonts/big_noodle_titling.ttf') format('truetype');
 }
 
-.repo-card {
-    font-family: 'BigNoodleTitling', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    /* border: 2px solid #71A76C; */
-    border-radius: 10px;
-    /* background-color: #d0e1d0; */
-    padding: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
+@media only screen and (min-width: 431px) {
+    /* -------------------------------------- */
+    /* -------------- DARK MODE -------------*/
+    /* -------------------------------------- */
+    .dark-mode-shadow {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
 
-.repo-name {
-    color: #0E160E;
-    margin: 10px;
-    font-size: larger;
-}
 
-.repo-description {
-    color: #71A76C;
-    font-size: 25px;
-    margin: 10px;
-}
+    /* --------------------------------------- */
 
-.language-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.repo-language {
-    color: #0E160E;
-    font-size: 25px;
-    margin: 0;
-}
+    /* -------------------------------------- */
+    /* -------------- LIGHT MODE ------------*/
+    /* -------------------------------------- */
+    .light-mode-shadow {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
 
-.icon-language {
-    font-size: 20px;
-    color: #FFD600;
-}
+    /* --------------------------------------- */
 
-.icon-react {
-    font-size: 20px;
-    color: #61DBFB;
-}
+    .repo-card {
+        font-family: 'BigNoodleTitling', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 45%;
+    }
 
-.icon-html {
-    font-size: 20px;
-    color: #E34C26;
-}
+    .repo-header {
+        background-color: #71A76C;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
 
-.icon-css {
-    font-size: 20px;
-    color: #264DE4;
-}
+    .repo-body {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
 
-.repo-buttom{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 2px solid #71A76C;
-    border-radius: 20px;
-    background-color: #71A76C;
-    color: #f7fff7;
-    width: auto;
-    margin: 10px;
-}
+    .repo-name {
+        color: #f7fff7;
+        margin: 10px;
+        font-size: larger;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
 
-.repo-buttom:hover{
-    background-color: #292F36;
-}
+    .repo-description-container{
+        padding: 0 10px 0 10px;
+    }
 
-.buttoms-container{
-    display: flex;
-    flex-direction: row;
-}
+    .repo-description {
+        color: #71A76C;
+        font-size: 25px;
+        font-family: 'Merriweather Sans', sans-serif;
+        width: 100%;
+    }
 
-.span-buttom{
-    font-family: 'BigNoodleTitling', sans-serif;
-    font-size: large;
-    margin: 10px;
-}
+    .language-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: large;
+        gap: 10px;
+    }
 
-.icon-button {
-    color: #f7fff7;
-    font-size: 20px;
+    .repo-language {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .icon-language {
+        font-size: 20px;
+        color: #FFD600;
+    }
+
+    .icon-react {
+        font-size: 20px;
+        color: #61DBFB;
+    }
+
+    .icon-html {
+        font-size: 20px;
+        color: #E34C26;
+    }
+
+    .icon-css {
+        font-size: 20px;
+        color: #264DE4;
+    }
+
+    .repo-buttom{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid #71A76C;
+        border-radius: 20px;
+        background-color: #71A76C;
+        color: #f7fff7;
+        width: auto;
+    }
+
+    .repo-buttom:hover{
+        background-color: #292F36;
+    }
+
+    .buttoms-container{
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0 20px 0;
+        gap: 10px;
+    }
+
+    .span-buttom{
+        font-family: 'BigNoodleTitling', sans-serif;
+        font-size: large;
+        margin: 5px;
+    }
+
+    .icon-button {
+        color: #f7fff7;
+        font-size: 20px;
+    }
 }
 
 /* Responsive styles using media queries */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 430px) {
+    /* -------------------------------------- */
+    /* -------------- DARK MODE -------------*/
+    /* -------------------------------------- */
+    .dark-mode-background {
+        background: #182518;
+    }
+
+
+    /* --------------------------------------- */
+
+    /* -------------------------------------- */
+    /* -------------- LIGHT MODE ------------*/
+    /* -------------------------------------- */
+    .light-mode-background {
+        background: #e0ebe0;
+    }
+
+    /* --------------------------------------- */
+
+    .repo-card {
+        font-family: 'BigNoodleTitling', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 45%;
+    }
+
+    .repo-header {
+        background-color: #71A76C;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .repo-body {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .repo-name {
+        color: #f7fff7;
+        margin: 10px;
+        font-size: larger;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+
+    .repo-description-container{
+        padding: 0 10px 0 10px;
+    }
+
     .repo-description {
-        font-size: 20px; /* Adjust font size for smaller screens */
+        color: #71A76C;
+        font-size: 25px;
+        font-family: 'Merriweather Sans', sans-serif;
+        width: 100%;
     }
 
-    .repo-language,
-    .icon-language,
-    .icon-react,
-    .icon-html,
+    .language-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: large;
+        gap: 10px;
+    }
+
+    .repo-language {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .hide-media {
+        display: none;
+    }
+
+    .icon-language {
+        font-size: 20px;
+        color: #FFD600;
+    }
+
+    .icon-react {
+        font-size: 20px;
+        color: #61DBFB;
+    }
+
+    .icon-html {
+        font-size: 20px;
+        color: #E34C26;
+    }
+
     .icon-css {
-        font-size: 16px; /* Adjust font size for smaller screens */
+        font-size: 20px;
+        color: #264DE4;
     }
 
-    .span-buttom {
-        font-size: medium; /* Adjust font size for smaller screens */
+    .repo-buttom{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid #71A76C;
+        border-radius: 20px;
+        background-color: #71A76C;
+        color: #f7fff7;
+        width: auto;
     }
 
-    .icon-button {
-        font-size: 16px; /* Adjust font size for smaller screens */
+    .repo-buttom:hover{
+        background-color: #292F36;
+    }
+
+    .buttoms-container{
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0 20px 0;
+        gap: 10px;
+    }
+
+    .span-buttom{
+        font-family: 'BigNoodleTitling', sans-serif;
+        font-size: 15px;
+        margin: 5px;
     }
 }

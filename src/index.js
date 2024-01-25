@@ -4,12 +4,13 @@ import './index.css';
 import MainPage from './routes/MainPage';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import config from './config.json';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainPage />,
+    element: <MainPage config={config}/>,
   }
 ]);
 
