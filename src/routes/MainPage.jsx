@@ -19,13 +19,38 @@ const MainPage = ({ config }) => {
   const [color_mode, setColorMode] = useState(false);
 
   useEffect(() => {
+    const getRepos = async () => {
+      let fetchedRepos  = [];
+      let res;
+      try {
+        console.log(config.gitBearerToken);
+        for (let i = 1; i <= maxPages; i++) {
+          res = await fetch(
+              `https://api.github.com/users/notdavo/repos?&sort=pushed&per_page=100&page=${i}`, {
+                headers: {
+                  'Authorization': config.gitBearerToken,
+                  'Content-Type': 'application/json',
+                },
+              }
+          );
+          let data = await res.json();
+          fetchedRepos  = fetchedRepos.concat(data);
+        }
+        fetchedRepos.sort((a, b) => b.forks_count - a.forks_count);
+        fetchedRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+        setRepos(fetchedRepos);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    
     getRepos();
     const storedTemeValue = localStorage.getItem('color_mode');
     const booleanTemeValue = JSON.parse(storedTemeValue);
     if (booleanTemeValue) {
       setColorMode(booleanTemeValue);
     }
-  }, []);
+  }, [config.gitBearerToken]);
 
   const toggleMode = () => {
     setColorMode((prevMode) => {
@@ -41,30 +66,6 @@ const MainPage = ({ config }) => {
     const github = String(config.github)
     url === 'linkedin' ? window.open(linkedin, '_blank') : window.open(github, '_blank');
   };
-
-  const getRepos = async () => {
-    let fetchedRepos  = [];
-    let res;
-    try {
-      for (let i = 1; i <= maxPages; i++) {
-        res = await fetch(
-            `https://api.github.com/users/notdavo/repos?&sort=pushed&per_page=100&page=${i}`, {
-              headers: {
-                'Authorization': config.gitBearerToken,
-                'Content-Type': 'application/json',
-              },
-            }
-        );
-        let data = await res.json();
-        fetchedRepos  = fetchedRepos.concat(data);
-    }
-    fetchedRepos.sort((a, b) => b.forks_count - a.forks_count);
-    fetchedRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
-    setRepos(fetchedRepos);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-};
 
   const sections = [{ id: 0, title: 'David Arce' },
                     { id: 1, title: 'About Me' },
