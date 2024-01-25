@@ -41,6 +41,7 @@ Here's a quick example of the dark mode and the mobile view of the page.
 
 - Learned about a few ways to implement the use of fetch API with the use of the GitHub API
 - Flex, @media and some other CSS tricks and usages.
+- Usage of Git and its commands.
 
 # What's next
 
