@@ -1,4 +1,3 @@
-// Section.js
 import React from 'react';
 import '../styles/Section.css';
 

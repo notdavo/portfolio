@@ -1,6 +1,5 @@
-// Repo.js
 import React, {useState, useEffect} from 'react';
-import '../styles/Repo.css';  // Adjust the path based on your project structure
+import '../styles/Repo.css';
 import { IoLogoJavascript, IoLogoGithub, IoLogoChrome, IoLogoReact, IoLogoCss3, IoLogoHtml5 } from "react-icons/io5";
 
 
