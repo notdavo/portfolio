@@ -1,0 +1,109 @@
+/* Section.css */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+
+@media only screen and (min-width: 431px) {
+  .style-title {
+    /* font-family: 'BigNoodleTitling', sans-serif; */
+    font-family: 'Merriweather Sans', sans-serif;
+    /* font-style: italic; */
+    margin: 10px 0 0 0;
+  }
+
+  /* -------------- DARK MODE -------------*/
+  .dark-style-title{
+    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;}
+  /* --------------------------------------- */
+
+  /* -------------- LIGHT MODE -------------*/
+  .light-style-title{
+    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* --------------------------------------- */
+
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin-bottom: 20px;
+    gap: 20px;
+    position: relative;
+  }
+
+
+  .section h2{
+    font-size: 80px;
+    margin: 0;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Ajusta el ancho total de la línea */
+    height: 2px; /* Grosor de la línea en el centro */
+    background: linear-gradient(to right, transparent 5%, #1d2225 50%, transparent 95%);
+  }
+}
+
+/* Responsive styles using media queries */
+
+@media only screen and (max-width: 430px) {
+  .style-title {
+    font-family: 'Merriweather Sans', sans-serif;
+    margin: 10px 0 0 0;
+  }
+
+  /* -------------- DARK MODE -------------*/
+  .dark-style-title{
+    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;}
+  /* --------------------------------------- */
+
+  /* -------------- LIGHT MODE -------------*/
+  .light-style-title{
+    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* --------------------------------------- */
+
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin-bottom: 20px;
+    gap: 20px;
+    position: relative;
+  }
+
+
+  .section h2{
+    font-size: 40px;
+    margin: 0;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Ajusta el ancho total de la línea */
+    height: 2px; /* Grosor de la línea en el centro */
+    background: linear-gradient(to right, transparent 5%, #71A76C 50%, transparent 95%);
+  }
+}
+  

@@ -1,0 +1,276 @@
+@font-face {
+    font-family: 'BigNoodleTitling';
+    src:  url('../assets/fonts/big_noodle_titling.ttf') format('truetype');
+}
+
+    /* -------------------------------------- */
+    /* -------------- DARK MODE -------------*/
+    /* -------------------------------------- */
+    .dark-mode-background {
+        background: #182518;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;  
+
+    }
+    /* --------------------------------------- */
+
+    /* -------------------------------------- */
+    /* -------------- LIGHT MODE ------------*/
+    /* -------------------------------------- */
+    .light-mode-background {
+        background: #e0ebe0;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;  
+    
+    }
+    /* --------------------------------------- */
+
+
+@media only screen and (min-width: 431px) {
+    /* -------------------------------------- */
+    /* -------------- DARK MODE -------------*/
+    /* -------------------------------------- */
+
+
+    /* --------------------------------------- */
+
+    /* -------------------------------------- */
+    /* -------------- LIGHT MODE ------------*/
+    /* -------------------------------------- */
+
+
+    /* --------------------------------------- */
+
+    .repo-card {
+        font-family: 'BigNoodleTitling', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 45%;
+    }
+
+    .repo-header {
+        background-color: #71A76C;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .repo-body {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .repo-name {
+        color: #f7fff7;
+        margin: 10px;
+        font-size: larger;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+
+    .repo-description-container{
+        padding: 0 10px 0 10px;
+    }
+
+    .repo-description {
+        color: #71A76C;
+        font-size: 25px;
+        font-family: 'Merriweather Sans', sans-serif;
+        width: 100%;
+    }
+
+    .language-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: large;
+        gap: 10px;
+    }
+
+    .repo-language {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .icon-language {
+        font-size: 20px;
+        color: #FFD600;
+    }
+
+    .icon-react {
+        font-size: 20px;
+        color: #61DBFB;
+    }
+
+    .icon-html {
+        font-size: 20px;
+        color: #E34C26;
+    }
+
+    .icon-css {
+        font-size: 20px;
+        color: #264DE4;
+    }
+
+    .repo-buttom{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid #71A76C;
+        border-radius: 20px;
+        background-color: #71A76C;
+        color: #f7fff7;
+        width: auto;
+    }
+
+    .repo-buttom:hover{
+        background-color: #292F36;
+    }
+
+    .buttoms-container{
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0 20px 0;
+        gap: 10px;
+    }
+
+    .span-buttom{
+        font-family: 'BigNoodleTitling', sans-serif;
+        font-size: large;
+        margin: 5px;
+    }
+
+    .icon-button {
+        color: #f7fff7;
+        font-size: 20px;
+    }
+}
+
+/* Responsive styles using media queries */
+
+@media only screen and (max-width: 430px) {
+    /* -------------------------------------- */
+    /* -------------- DARK MODE -------------*/
+    /* -------------------------------------- */
+
+
+    /* --------------------------------------- */
+
+    /* -------------------------------------- */
+    /* -------------- LIGHT MODE ------------*/
+    /* -------------------------------------- */
+
+
+    /* --------------------------------------- */
+
+    .repo-card {
+        font-family: 'BigNoodleTitling', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 45%;
+    }
+
+    .repo-header {
+        background-color: #71A76C;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .repo-body {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .repo-name {
+        color: #f7fff7;
+        margin: 10px;
+        font-size: larger;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+
+    .repo-description-container{
+        padding: 0 10px 0 10px;
+    }
+
+    .repo-description {
+        color: #71A76C;
+        font-size: 25px;
+        font-family: 'Merriweather Sans', sans-serif;
+        width: 100%;
+    }
+
+    .language-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: large;
+        gap: 10px;
+    }
+
+    .repo-language {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .hide-media {
+        display: none;
+    }
+
+    .icon-language {
+        font-size: 20px;
+        color: #FFD600;
+    }
+
+    .icon-react {
+        font-size: 20px;
+        color: #61DBFB;
+    }
+
+    .icon-html {
+        font-size: 20px;
+        color: #E34C26;
+    }
+
+    .icon-css {
+        font-size: 20px;
+        color: #264DE4;
+    }
+
+    .repo-buttom{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid #71A76C;
+        border-radius: 20px;
+        background-color: #71A76C;
+        color: #f7fff7;
+        width: auto;
+    }
+
+    .repo-buttom:hover{
+        background-color: #292F36;
+    }
+
+    .buttoms-container{
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0 20px 0;
+        gap: 10px;
+    }
+
+    .span-buttom{
+        font-family: 'BigNoodleTitling', sans-serif;
+        font-size: 15px;
+        margin: 5px;
+    }
+}
