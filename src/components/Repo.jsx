@@ -27,6 +27,8 @@ const Repo = ({name, description, repo_url, color_mode, config}) => {
         fetchedRepoLanguage.sort((a, b) => b.stargazers_count - a.stargazers_count);
         if (fetchedRepoLanguage[0].hasOwnProperty('JavaScript')) {
           setLanguage('JavaScript');
+        }else{
+          setLanguage('JavaScript');
         }
       } catch (error) {
         console.error("Error fetching data:", error);
