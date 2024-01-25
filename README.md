@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# My Portfolio web page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+In this portfolio, with the use of the GitHub API, I showcase all the projects that I have worked on, information about my skills and my contact information.
+Also contains the use of icons form the `react-icons/io5` library.
 
-In the project directory, you can run:
+In this project the use of `React`, `JavaScript`, `HTML` and `CSS` is implemented.
 
-### `npm start`
+## Table of content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This web page contains just four segments:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## - Main Page
 
-### `npm test`
+This is a quick welcome to the page with quick personal information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/notdavo/portfolio/assets/65801140/4bb1f632-bdde-452c-81f5-8cdd0c46a183)
 
-### `npm run build`
+## - About Me
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Here you can read about my self and all the skills that I have used.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/notdavo/portfolio/assets/65801140/f07c29cb-1d17-4a51-976e-1b09e81f6672)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## - Portfolio
 
-### `npm run eject`
+What may be the most important segment of the web page.
+Here all the projects are shown with their respective information.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![image](https://github.com/notdavo/portfolio/assets/65801140/e6e23d4c-2cf3-4dfa-943c-80d806d5ef01)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Themes and types of view
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Here's a quick example of the dark mode and the mobile view of the page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![image](https://github.com/notdavo/portfolio/assets/65801140/0b8d94c5-f08c-4a0c-8b10-a3c7f1ad4832) ![image](https://github.com/notdavo/portfolio/assets/65801140/19eb433d-12a1-45e3-b6c0-0a1335b9235d)
+![image](https://github.com/notdavo/portfolio/assets/65801140/df4b5b18-1336-496a-8bf3-6962efb15345)
 
-## Learn More
+# What I learned
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Learned about a few ways to implement the use of fetch API with the use of the GitHub API
+- Flex, @media and some other CSS tricks and usages.
+- Usage of Git and its commands.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# What's next
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+From here on I want to practice creating more projects, gain experience and keep learning to grow as a professional.

@@ -131,9 +131,9 @@ const MainPage = ({ config }) => {
                 {repos.map((repo) =>(
                   <Repo key={repo.id} name={repo.name} description={repo.description} repo_url={repo.html_url} color_mode={color_mode} config={config}/>
                 ))}
-                  {/* <Repo key={'repo.id'} name={'repo.name'} description={'repo.description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
-                  <Repo key={'repo.id2'} name={'repo.name'} description={'repo.description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
-                  <Repo key={'repo.id3'} name={'repo.name'} description={'repo.description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/> */}
+                  <Repo key={'repo.id'} name={'Example Repo 1'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
+                  <Repo key={'repo.id2'} name={'Example Repo 2'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
+                  <Repo key={'repo.id3'} name={'Example Repo 3'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
 
               </div>
             )}
