@@ -35,7 +35,7 @@ const Repo = ({name, description, repo_url, color_mode, config}) => {
     };
 
     getRepoLanguages();
-  }, [name]);
+  }, [name, config.gitBearerToken]);
 
   const repoURL = () => {
     window.open(repo_url, '_blank');
