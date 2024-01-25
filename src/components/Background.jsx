@@ -4,8 +4,8 @@ import '../styles/Background.css';
 
 const Background = ({ color_mode }) => {
   return (
-    <div class="area" >
-        <ul class="circles">
+    <div className={`area ${color_mode ? 'dark-mode-area' : 'light-mode-area'}`}>
+        <ul className="circles">
             <li></li>
             <li></li>
             <li></li>

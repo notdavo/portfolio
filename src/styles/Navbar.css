@@ -8,9 +8,9 @@
 @media only screen and (min-width: 431px) {
     .navbar {
         width: 150px;
+        height: 100vh;
         padding: 10px;
         left: 0;
-        min-height: 100vh;   
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -19,16 +19,22 @@
         font-family: 'BigNoodleTitling', sans-serif;
         font-size: 30px;
         gap: 2%;
-        height: 100%;
     }
 
     .navbar a {
         text-decoration: none;
         display: flex;
-        flex-grow: 1;
         text-align: center;
         align-items: center;
         padding: 14px;
+    }
+
+    .navbar a:hover {
+        border-radius: 10px;
+    }
+    
+    .navbar a.active {
+        border-radius: 10px;
     }
 
     /* -------------------------------------- */

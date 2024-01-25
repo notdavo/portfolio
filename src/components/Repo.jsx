@@ -5,7 +5,7 @@ import { IoLogoJavascript, IoLogoGithub, IoLogoChrome, IoLogoReact, IoLogoCss3, 
 
 
 
-const Repo = ({name, description, repo_url, color_mode}) => {
+const Repo = ({name, description, repo_url, color_mode, config}) => {
 
   const [mainLanguage, setLanguage] = useState('');
 
@@ -17,7 +17,7 @@ const Repo = ({name, description, repo_url, color_mode}) => {
         res = await fetch(
             `https://api.github.com/repos/notdavo/${name}/languages`, {
               headers: {
-                'Authorization': `Bearer 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`,
+                'Authorization': config.gitBearerToken,
                 'Content-Type': 'application/json',
               },
             }
@@ -50,16 +50,6 @@ const Repo = ({name, description, repo_url, color_mode}) => {
         <div className='repo-description-container'>
           <p className='repo-description'>{description}</p>
         </div>
-        {/* <div className='language-container'>
-          <IoLogoJavascript className='icon-language'/>
-          <p className='repo-language'>{mainLanguage}</p>
-          <IoLogoReact className='icon-react'/>
-          <p className='repo-language react'>React</p>
-          <IoLogoHtml5 className='icon-html'/>
-          <p className='repo-language'>HTML</p>
-          <IoLogoCss3 className='icon-css'/>  
-          <p className='repo-language'>CSS</p>
-        </div> */}
         <div className='flex-column skills'>
           <div className='language-container'>
             <span className='icons-main background-icon-black test'><IoLogoJavascript className='icon-size-main icon-javascript-main'/><span className='hide-media'>{mainLanguage}</span></span>
