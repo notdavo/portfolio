@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import MainPage from './routes/MainPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import config from './config.json';
-
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainPage config={config}/>,
+    element: <MainPage/>,
   }
 ]);
 

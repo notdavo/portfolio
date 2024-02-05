@@ -11,7 +11,10 @@ import '../styles/MainPage.css';
 
 
 
-const MainPage = ({ config }) => {
+const MainPage = () => {
+  const BearerToken = process.env.REACT_APP_BEARER_TOKEN;
+  const linkedin = process.env.REACT_APP_LINKEDIN;
+  const github = process.env.REACT_APP_GITHUB;
 
   const maxPages = 3;
   const [repos, setRepos] = useState([]);
@@ -22,12 +25,11 @@ const MainPage = ({ config }) => {
       let fetchedRepos  = [];
       let res;
       try {
-        console.log(config.gitBearerToken);
         for (let i = 1; i <= maxPages; i++) {
           res = await fetch(
               `https://api.github.com/users/notdavo/repos?&sort=pushed&per_page=100&page=${i}`, {
                 headers: {
-                  'Authorization': config.gitBearerToken,
+                  'Authorization': BearerToken,
                   'Content-Type': 'application/json',
                 },
               }
@@ -49,7 +51,7 @@ const MainPage = ({ config }) => {
     if (booleanTemeValue) {
       setColorMode(booleanTemeValue);
     }
-  }, [config.gitBearerToken]);
+  }, [BearerToken]);
 
   const toggleMode = () => {
     setColorMode((prevMode) => {
@@ -60,9 +62,6 @@ const MainPage = ({ config }) => {
   };  
 
   const openURL = (url) => {
-
-    const linkedin = String(config.linkedin)
-    const github = String(config.github)
     url === 'linkedin' ? window.open(linkedin, '_blank') : window.open(github, '_blank');
   };
 
@@ -129,11 +128,11 @@ const MainPage = ({ config }) => {
             {section.id === 2 && (
               <div className='repo-container'>
                 {repos.map((repo) =>(
-                  <Repo key={repo.id} name={repo.name} description={repo.description} repo_url={repo.html_url} color_mode={color_mode} config={config}/>
+                  <Repo key={repo.id} name={repo.name} description={repo.description} repo_url={repo.html_url} color_mode={color_mode}/>
                 ))}
-                  <Repo key={'repo.id'} name={'Example Repo 1'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
-                  <Repo key={'repo.id2'} name={'Example Repo 2'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
-                  <Repo key={'repo.id3'} name={'Example Repo 3'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode} config={config}/>
+                  <Repo key={'repo.id'} name={'Example Repo 1'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
+                  <Repo key={'repo.id2'} name={'Example Repo 2'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
+                  <Repo key={'repo.id3'} name={'Example Repo 3'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
 
               </div>
             )}
