@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 import '../styles/Repo.css';
 import { IoLogoJavascript, IoLogoGithub, IoLogoChrome, IoLogoReact, IoLogoCss3, IoLogoHtml5 } from "react-icons/io5";
 
+const BearerToken = process.env.REACT_APP_BEARER_TOKEN;
 
+const Repo = ({name, description, repo_url, color_mode}) => {
 
-const Repo = ({name, description, repo_url, color_mode, config}) => {
 
   const [mainLanguage, setLanguage] = useState('');
 
@@ -16,7 +17,7 @@ const Repo = ({name, description, repo_url, color_mode, config}) => {
         res = await fetch(
             `https://api.github.com/repos/notdavo/${name}/languages`, {
               headers: {
-                'Authorization': config.gitBearerToken,
+                'Authorization': BearerToken,
                 'Content-Type': 'application/json',
               },
             }
@@ -36,7 +37,7 @@ const Repo = ({name, description, repo_url, color_mode, config}) => {
     };
 
     getRepoLanguages();
-  }, [name, config.gitBearerToken]);
+  }, [name]);
 
   const repoURL = () => {
     window.open(repo_url, '_blank');
