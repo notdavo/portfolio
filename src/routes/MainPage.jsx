@@ -68,7 +68,7 @@ const MainPage = () => {
   const sections = [{ id: 0, title: 'David Arce' },
                     { id: 1, title: 'About Me' },
                     { id: 2, title: 'Portfolio' },
-                    { id: 3, title: 'Contact' },]
+                    /*{ id: 3, title: 'Contact' },*/]
 
   const LinkedinIcon = () => {
     const handleClick = () => {
@@ -136,11 +136,11 @@ const MainPage = () => {
 
               </div>
             )}
-            {section.id === 3 && (
+            {/* {section.id === 3 && (
                 <div>
                     <p>This is the content for Contact.</p>
                 </div>
-            )}
+            )} */}
           </Section>
         ))}
       </div>
