@@ -9,8 +9,6 @@ import { IoLogoJavascript, IoLogoGithub, IoLogoLinkedin , IoLogoReact, IoLogoCss
 import '../styles/MainPage.css';
 
 
-
-
 const MainPage = () => {
   const BearerToken = process.env.REACT_APP_BEARER_TOKEN;
   const linkedin = process.env.REACT_APP_LINKEDIN;
@@ -130,10 +128,6 @@ const MainPage = () => {
                 {repos.map((repo) =>(
                   <Repo key={repo.id} name={repo.name} description={repo.description} repo_url={repo.html_url} color_mode={color_mode}/>
                 ))}
-                  <Repo key={'repo.id'} name={'Example Repo 1'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
-                  <Repo key={'repo.id2'} name={'Example Repo 2'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
-                  <Repo key={'repo.id3'} name={'Example Repo 3'} description={'Example Repo description'} repo_url={'repo.html_url'} color_mode={color_mode}/>
-
               </div>
             )}
             {/* {section.id === 3 && (
