@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.contenedor {
+  perspective: 800px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #111111; */
+  height: 100vh;
+  width: 100%;
+  align-items: end;
+}
+
+.contenedor-background {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 102%;
+  height: 110%;
+  background-color: #111111;
+  transform: rotateY(-35deg);
+  z-index: -1;
+}
+
+.texto-perspectiva {
+  font-size: 180px;
+  font-family: "Anton", sans-serif;
+  transform-origin: right;
+  transform: rotateY(-45deg);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+  height: 200px;
+  position: relative;
+  color: #e28000;
+  text-decoration: none;
+  margin: 0 30% 0 0;
+}
+
+.texto-perspectiva:hover {
+  -webkit-text-stroke: 0.1px #e28000;
+  color: #1b1b1b;
+  transform: rotateY(-25deg);
+  font-weight: bold;
+}
+
+.texto-perspectiva:focus {
+  transform: rotateY(0deg) translateX(0px);
+  /* font-weight: bold;
+  background: linear-gradient(45deg, #ffc340, #e28000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0; */
+  transition: transform 0.5s ease,
+    opacity 0.5s ease /*, top 0.5s ease, left 0.5s ease*/;
+  opacity: 0;
+}
+
+.contenedor:has(.texto-perspectiva:focus) .texto-perspectiva:not(:focus) {
+  opacity: 0;
+}
+
+.texto-perspectiva:not(:focus) {
+  opacity: 1;
+}

@@ -1,109 +1,42 @@
-/* Section.css */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+}
 
-@media only screen and (min-width: 431px) {
-  .style-title {
-    /* font-family: 'BigNoodleTitling', sans-serif; */
-    font-family: 'Merriweather Sans', sans-serif;
-    /* font-style: italic; */
-    margin: 10px 0 0 0;
-  }
+.section p {
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+}
 
-  /* -------------- DARK MODE -------------*/
-  .dark-style-title{
-    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;}
-  /* --------------------------------------- */
+.section h1 {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  margin: 0;
 
-  /* -------------- LIGHT MODE -------------*/
-  .light-style-title{
-    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  /* --------------------------------------- */
+  background: linear-gradient(45deg, #ffc340, #e28000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
 
-
-  .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    margin-bottom: 20px;
-    gap: 20px;
-    position: relative;
-  }
-
-
-  .section h2{
-    font-size: 80px;
-    margin: 0;
-  }
-
-  .line {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; /* Ajusta el ancho total de la línea */
-    height: 2px; /* Grosor de la línea en el centro */
-    background: linear-gradient(to right, transparent 5%, #1d2225 50%, transparent 95%);
+@media (min-width: 750px) {
+  .section h1 {
+    font-size: 90px;
   }
 }
 
-/* Responsive styles using media queries */
-
-@media only screen and (max-width: 430px) {
-  .style-title {
-    font-family: 'Merriweather Sans', sans-serif;
-    margin: 10px 0 0 0;
-  }
-
-  /* -------------- DARK MODE -------------*/
-  .dark-style-title{
-    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;}
-  /* --------------------------------------- */
-
-  /* -------------- LIGHT MODE -------------*/
-  .light-style-title{
-    background: linear-gradient(to right, #71A76C, #8FBCB6, #AFCFC4); /* Colores del degradado, ajusta según tus preferencias */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  /* --------------------------------------- */
-
-
-  .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    margin-bottom: 20px;
-    gap: 20px;
-    position: relative;
-  }
-
-
-  .section h2{
-    font-size: 40px;
-    margin: 0;
-  }
-
-  .line {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; /* Ajusta el ancho total de la línea */
-    height: 2px; /* Grosor de la línea en el centro */
-    background: linear-gradient(to right, transparent 5%, #71A76C 50%, transparent 95%);
+@media (max-width: 750px) {
+  .section h1 {
+    font-size: 55px;
   }
 }
-  

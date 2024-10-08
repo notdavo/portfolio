@@ -93,12 +93,15 @@ const Repo = ({ name, description, repo_url, color_mode }) => {
                   <span className="hide-media">CSS</span>
                 </span>
               )}
-              {name === "portfolio" && (
+              {name === "portfolio" ||
+              name === "react-hooks-examples" ||
+              name === "guess-the-song" ||
+              name === "fake-store" ? (
                 <span className="icons-main background-icon-black">
                   <IoLogoReact className="icon-size-main icon-react-main" />
                   <span className="hide-media">React</span>
                 </span>
-              )}
+              ) : null}
               {language.HTML && (
                 <span className="icons-main html-main">
                   <IoLogoHtml5 className="icon-size-main icon-white" />

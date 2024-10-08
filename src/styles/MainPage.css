@@ -1,422 +1,50 @@
-/* MainPage.css */
-@import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap");
-
 html {
   scroll-behavior: smooth;
 }
 
-.background-icon-black {
-  background-color: #080c08;
+.main-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-@media only screen and (min-width: 431px) {
-  .flex-container {
-    display: flex;
-    justify-content: center;
-    margin-left: 160px;
-    padding: 0 300px 0 300px;
-  }
+.body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background: radial-gradient(circle, #060a06 25%, #1b1b1b);
+  top: 0;
+  width: 100%;
+  position: sticky;
+  margin-top: 100vh;
+}
 
-  /* --------------------------------------
-       -------------- DARK MODE -------------
-       -------------------------------------- */
-  .dark-mode-flex-container {
-    background-color: #0d140d;
-    color: #e9f1e9;
-  }
+.section-container {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  overflow-y: auto;
+  height: 100vh;
+  scroll-behavior: smooth;
+  gap: 1vw;
+}
 
-  .dark-mode-color-white {
-    color: #e9f1e9;
-  }
+.section-container::-webkit-scrollbar {
+  display: none;
+}
 
-  .dark-mode-icon:hover {
-    color: #5d9358;
-  }
-  /* -------------------------------------- */
-
-  /* --------------------------------------
-       -------------- LIGHT MODE ------------
-       -------------------------------------- */
-  .light-mode-flex-container {
-    background-color: #f5f9f5;
-    color: #0e160e;
-  }
-
-  .light-mode-style-2 {
-    color: #71a76c;
-  }
-
-  .light-mode-style-2 span {
-    color: #8fbcb6;
-    font-weight: bold;
-  }
-
-  .light-mode-color-black {
-    color: #0e160e;
-  }
-
-  .light-mode-icon:hover {
-    color: #43706a;
-  }
-  /* -------------------------------------- */
-
-  .sections {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    font-size: 30px;
-  }
-
-  .thin-text {
-    font-family: "Roboto Slab", serif;
-    font-weight: bold;
-    margin: 10px 0 0 0;
-  }
-
-  .bold-text {
-    font-family: "Slabo 13px", serif;
-    font-weight: bold;
-    margin: 10px 0 0 0;
-  }
-
-  .bold-text span {
-    border-bottom: 2px solid #71a76c;
-  }
-
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .flex-column {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .style-about-me {
-    font-family: "Slabo 13px", serif;
-    justify-content: center;
-    margin: 0 0 10px 0;
-  }
-
-  .about_me_container {
-    justify-content: center;
-    gap: 40px;
-  }
-
-  .about_me {
-    text-align: justify;
-    justify-content: center;
-  }
-  /* -------------------------------------
-       -------------- SKILLS ---------------
-       ------------------------------------- */
-
-  .skills {
-    color: #f7fff7;
-    font-family: "Roboto Slab", serif;
-    font-weight: bold;
-  }
-
-  /* ------------------------------------- */
-
-  /* -------------------------------------
-       -------------- ICONS ----------------
-       ------------------------------------- */
-
-  .icons-container {
-    /* justify-content: start; */
-    display: flex;
-    gap: 10px;
-  }
-
-  .icons-container span {
-    font-size: large;
-  }
-
-  .icons-main {
-    gap: 5px;
-    display: flex;
-    padding: 5px;
-    align-items: center;
-    border-radius: 5px;
-  }
-
-  .html-main {
-    background-color: #e34c26;
-  }
-
-  .css-main {
-    background-color: #264de4;
-  }
-
-  .icon-size-main {
-    font-size: 25px;
-  }
-
-  .icon-javascript-main {
-    color: #ffd600;
-  }
-
-  .icon-react-main {
-    color: #61dbfb;
-  }
-
-  .icon-white {
-    color: #f7fff7;
-  }
-
-  .profile_image {
-    max-width: 220px;
-    max-height: 220px;
-    border-radius: 50%;
-  }
-
-  .icon {
-    cursor: pointer;
-    font-size: 30px;
-  }
-
-  .icon:hover {
-    margin-right: 10px;
-    color: #71a76c;
-  }
-
-  .repo-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center;
-    gap: 20px;
-  }
-  /* ------------------------------------- */
-
-  /* .download-button{
-        margin-top: 10px;
-        display: inline-block;
-        background-color: #4ecdc4;
-        color: #f7fff7;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        border: none;
-        border-radius: 10px;
-        font-family: 'BigNoodleTitling';
-        font-size: 30px;
-        cursor: pointer;
+@media (min-width: 750px) {
+  .section-container {
+    .section-spacing {
+      margin: 6vw 20vw 0 0;
     }
-
-    .download-button:hover{
-        background-color: #41aaa3;
-    } */
-
-  .social-container {
-    margin-top: 10px;
-    gap: 10px;
-    justify-content: start;
   }
 }
 
-@media only screen and (max-width: 430px) {
-  .david-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 60px;
-  }
-
-  .flex-container p {
-    font-size: 15px;
-  }
-
-  /* -------------------------------------- 
-       -------------- DARK MODE ------------- 
-       -------------------------------------- */
-  .dark-mode-flex-container {
-    background-color: #0d140d;
-    color: #e9f1e9;
-  }
-
-  .dark-mode-color-white {
-    color: #e9f1e9;
-  }
-
-  .dark-mode-icon:hover {
-    color: #5d9358;
-  }
-  /* -------------------------------------- */
-
-  /* -------------------------------------- 
-       -------------- LIGHT MODE ------------
-       -------------------------------------- */
-  .light-mode-flex-container {
-    /* background-color: #F5F9F5; */
-    color: #0e160e;
-  }
-
-  .light-mode-style-2 {
-    color: #71a76c;
-  }
-
-  .light-mode-style-2 span {
-    color: #8fbcb6;
-    font-weight: bold;
-  }
-
-  .light-mode-color-black {
-    color: #0e160e;
-  }
-
-  .light-mode-icon:hover {
-    color: #43706a;
-  }
-  /* -------------------------------------- */
-
-  .sections {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    font-size: 30px;
-    padding: 0 40px 0 40px;
-  }
-
-  .thin-text {
-    font-family: "Roboto Slab", serif;
-    font-weight: bold;
-    margin: 10px 0 0 0;
-  }
-
-  .bold-text {
-    font-family: "Slabo 13px", serif;
-    font-weight: bold;
-    margin: 10px 0 0 0;
-    text-align: justify;
-  }
-
-  .bold-text span {
-    border-bottom: 2px solid #71a76c;
-  }
-
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .flex-column {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .style-about-me {
-    font-family: "Slabo 13px", serif;
-    justify-content: center;
-    margin: 0 0 10px 0;
-  }
-
-  .about_me_container {
-    justify-content: center;
-  }
-
-  .about_me {
-    text-align: justify;
-    justify-content: center;
-  }
-  /* -------------------------------------
-       -------------- SKILLS ---------------
-       ------------------------------------- */
-
-  .skills {
-    color: #f7fff7;
-    font-family: "Roboto Slab", sans-serif;
-    font-weight: bold;
-  }
-
-  /* ------------------------------------- */
-
-  /* ------------------------------------- 
-       -------------- ICONS ----------------
-       ------------------------------------- */
-
-  .icons-container {
-    display: flex;
-    gap: 5px;
-  }
-
-  .icons-container span {
-    font-size: 10px;
-  }
-
-  .icons-main {
-    gap: 2px;
-    display: flex;
-    padding: 5px;
-    align-items: center;
-    border-radius: 5px;
-  }
-
-  .html-main {
-    background-color: #e34c26;
-  }
-
-  .css-main {
-    background-color: #264de4;
-  }
-
-  .icon-size-main {
-    font-size: 15px;
-  }
-
-  .icon-javascript-main {
-    color: #ffd600;
-  }
-
-  .icon-react-main {
-    color: #61dbfb;
-  }
-
-  .icon-white {
-    color: #f7fff7;
-  }
-
-  .profile_image {
-    width: 0;
-  }
-
-  .icon {
-    cursor: pointer;
-    font-size: 30px;
-  }
-
-  .icon:hover {
-    margin-right: 10px;
-    color: #71a76c;
-  }
-
-  .repo-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center;
-    gap: 20px;
-  }
-  /* ------------------------------------- */
-
-  .social-container {
-    margin-top: 10px;
-    gap: 10px;
-    justify-content: start;
+@media (max-width: 750px) {
+  .section-container {
+    /* margin: 100px 40px 0 40px; */
   }
 }

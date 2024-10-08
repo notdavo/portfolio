@@ -1,0 +1,95 @@
+.fixed-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  /* position: sticky; */
+  top: 10px;
+  flex: 1;
+  color: white;
+  margin: 6.5vw 0 0 0;
+}
+
+.header-container {
+  margin: 0 0 0 20vw;
+}
+
+.header-container,
+.info-header {
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.info-header a {
+  font-weight: 900;
+  font-size: 50px;
+
+  background: linear-gradient(45deg, #ffc340, #e28000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.info-header a:hover {
+  cursor: pointer;
+}
+
+.info-header h2 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.header-container {
+  gap: 15px;
+  color: white;
+  text-align: start;
+  flex: 1;
+  top: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  padding-left: 40px;
+  transition: padding-left 0.3s ease, color 0.3s ease;
+  font-weight: 300;
+}
+
+.nav a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 1px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::before {
+  width: 50px;
+}
+
+.nav a:hover {
+  padding-left: 60px;
+}
+
+.info-header {
+  gap: 5px;
+}
+
+.info-header h1,
+h2,
+h3 {
+  margin: 0;
+}

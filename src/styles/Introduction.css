@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.down-arrow {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  color: #e28000;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@media (min-width: 750px) {
+  .david-profile-image {
+    width: 200px;
+  }
+
+  .introduction-container h1 {
+    font-size: 80px;
+  }
+
+  .introduction-container h2 {
+    font-size: 29px;
+  }
+
+  .icon {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 750px) {
+  .david-profile-image {
+    width: 150px;
+  }
+
+  .introduction-container h1 {
+    font-size: 40px;
+  }
+
+  .introduction-container h2 {
+    font-size: 15px;
+  }
+
+  .icon {
+    font-size: 35px;
+  }
+}
+
+.introduction-container {
+  scroll-behavior: smooth;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Asegura que esté por encima del contenido */
+  --s: 211px;
+  --c1: #30303079;
+  --c2: #1b1b1b80;
+  --_g: #0000 90deg, var(--c1) 0;
+  background: conic-gradient(from 90deg at 2px 2px, var(--_g)),
+    conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
+  background-size: var(--s) var(--s), calc(var(--s) / 5) calc(var(--s) / 5);
+}
+
+.introduction-container h1 {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  margin: 0;
+
+  background: linear-gradient(45deg, #ffc340, #e28000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.introduction-container h2 {
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+}
+
+.social-container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: #ffc340;
+}
+
+.icon {
+  transition: transform 0.1s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  color: #e28000;
+}

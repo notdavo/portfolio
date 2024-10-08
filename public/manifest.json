@@ -1,13 +1,10 @@
 {
-    "short_name": "My Portfolio",
-    "name": "My Portfolio",
-    "description": "This is a portfolio to showcase my project and about me.",
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
-    "icons": [
-      
-    ]
-  }
-  
+  "short_name": "Portfolio",
+  "name": "David Arce Portfolio",
+  "description": "Portfolio to showcase projects and about me.",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": []
+}
